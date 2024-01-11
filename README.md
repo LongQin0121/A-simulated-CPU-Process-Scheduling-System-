@@ -1,5 +1,9 @@
-
-<h1 style="color: #27ae60;">Simulation of CPU Processes Scheduling</h1>
+<style>
+  h1 {
+    color: green;
+  }
+</style>
+<h1>Simulation of CPU Processes Scheduling</h1>
 
 
 ## Overview Of this project
@@ -69,4 +73,4 @@ This C program simulates a basic operating system environment with multiple comm
 
 ## How to run the code
 ![Alt text](image/example.png)
-### Note:The program should be run on Linux.
+<h1> Note:The program should be run on Linux.</h1>
