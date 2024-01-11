@@ -7,7 +7,7 @@ The goal of this project is to implement a program, named myscheduler, to simula
 
 The sysconfig file contains information about devices and the time quantum,while the command file specifies the commands or processes to be executed, along with their associated system calls.
 
-<img src="Five_state.png" alt="Five State Model" />'
+<img src="image/Five_state.png" alt="Five State Model" />'
 
 
 ## Background knowledge: Processes in Operating Systems
@@ -32,8 +32,7 @@ The operating system serves as a dispatcher, moving processes between states. St
 
 This model helps in understanding how operating systems efficiently manage processes for optimal system performance.
 
-![Alt text](single_blocked_queue.png)
-
+<img src="image/multiple_blocked_queues.png" alt="Multiple_blocked_queues.png" />'
 
 ## Project  Description
 
@@ -49,25 +48,19 @@ The CPU is connected to a number of input/output (I/O) devices of differing spee
 
 Only a single process can access each I/O device (and the data-bus) at any one time. If the data-bus is in use (data is still being transferred) and a second process also needs to access the data-bus, the second process must be queued until the current transfer is complete. When a data transfer completes, all waiting (queued) processes are consider to determine which process can next acquire the data-bus. If multiple processes are waiting to acquire the data-bus, the process that has been waiting the longest for the device with the fastest read speed will next acquire the data-bus. Thus, all processes waiting on devices with high read speeds are serviced before any processes that are waiting on devices with lower read speeds.
 
-The result is a need to support Multiple blocked queues, as introduced in Lecture 7.
-
 It takes 5 microseconds to perform a context-switch - to move one process from Ready → Running.
 It also takes 10 microseconds to move a process from Running → Blocked, Running → Ready, and Blocked → Ready.
 All other state transitions occur instantly (unrealistic, but keeping the project simple).
 It takes 20 microseconds for any process to first acquire the data-bus.
 
-##System configuration
+## System configuration
 Consider the following sample sysconfig file which defines the characteristics of our hardware and the time-quantum for scheduling. Note that lines commencing with a '#' are comment lines, and the 'words' on each line may be separated by one-or-more space or tab characters. All speeds are in bytes-per-second (Bps), all times are in microseconds (usecs), and all I/O sizes are in bytes (B). We may assume that the format of the sysconfig file will always be correct, and its data values consistent, so we do not need to check for errors.
 ![Alt text](system_configuration.png)
-
-
 
 ## Commands
 Our simple operating system supports a small number of commands (which you can modify and extend with with your own commands). When a command is invoked, a new process is created. Multiple instances of the same command may be executing simultaneously. Each process executes a sequence of system-calls until the process exits.
 Consider the following sample command file which defines the supported commands and the sequence of system-calls that they make. Each system-call made by a command is indented by a single tab, and is preceded by the elapsed execution time, in microseconds, of the process (the total time it has occupied the CPU). The times when each process's system-calls are made are guarateed to be ascending. Note that lines commencing with a '#' are comment lines, that the 'words' on each line may be separated by one-or-more space or tab characters, and that the commands do not receive or require any commnad-line arguments. We may assume that the format of the commands file will always be correct, and its data values consistent, so we do not need to check for errors.
 ![Alt text](commands.png)
-
-
 
 
 ## Overview of the code:
