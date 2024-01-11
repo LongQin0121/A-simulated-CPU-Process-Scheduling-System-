@@ -1,8 +1,4 @@
-<style>
-  h1 {
-    color: green;
-  }
-</style>
+
 <h1>Simulation of CPU Processes Scheduling</h1>
 
 
