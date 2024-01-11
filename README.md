@@ -69,3 +69,4 @@ This C program simulates a basic operating system environment with multiple comm
 
 ## How to run the code
 ![Alt text](image/example.png)
+### Note:The program should be run on Linux.
