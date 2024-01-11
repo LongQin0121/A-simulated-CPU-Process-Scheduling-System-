@@ -1,4 +1,6 @@
-\033[1;36m# Simulation of CPU Processes Scheduling\033[0m
+
+<h1 style="color: #27ae60;">Simulation of CPU Processes Scheduling</h1>
+
 
 ## Overview Of this project
 
@@ -63,3 +65,7 @@ Consider the following sample command file which defines the supported commands 
 ## Overview of the code:
 
 This C program simulates a basic operating system environment with multiple commands and custom system calls. It defines structures for devices, syscalls, and commands, incorporating features like I/O operations, sleeping, waiting, and process spawning. The code reads configuration files to set up devices and command details, including associated syscalls. The simulation uses queues for managing processes in different states (ready, bus, sleep, wait) and executes commands in a round-robin fashion, considering a time quantum. Notably, the program handles device I/O, sleep duration, waiting for child processes, and bus access prioritization based on speed. The main function orchestrates the entire simulation, measuring total system time and CPU utilization. Overall, this code provides a foundation for exploring operating system concepts through a simplified yet comprehensive simulation.
+
+
+## How to run the code
+![Alt text](image/example.png)
